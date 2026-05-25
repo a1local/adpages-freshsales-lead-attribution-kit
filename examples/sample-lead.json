@@ -1,0 +1,81 @@
+{
+  "client": {
+    "name": "Perth Plumbing Co"
+  },
+  "form": {
+    "name": "Emergency Plumbing Freshsales Form"
+  },
+  "freshsales": {
+    "owner": "Intake team",
+    "lifecycleStage": "New lead",
+    "assignmentRule": "Manual review before automation"
+  },
+  "pipeline": {
+    "name": "Local Service Leads",
+    "stage": "Qualification",
+    "owner": "Intake team"
+  },
+  "contact": {
+    "firstName": "Sam",
+    "lastName": "Example",
+    "name": "Sam Example",
+    "phone": "+61 400 000 123",
+    "email": "sam@example.test",
+    "organization": "Example Household"
+  },
+  "lead": {
+    "title": "Emergency plumber enquiry - Subiaco",
+    "service": "Blocked drain",
+    "location": "Subiaco WA",
+    "urgency": "same_day",
+    "estimatedValue": 650,
+    "message": "Toilet is backing up and we need help today."
+  },
+  "page": {
+    "url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123&msclkid=test-msclkid-456&fbclid=test-fbclid-789",
+    "referrer": "https://www.google.com/"
+  },
+  "utm": {
+    "source": "google",
+    "medium": "cpc",
+    "campaign": "emergency-plumber-perth",
+    "term": "blocked drain",
+    "content": "call-ad"
+  },
+  "clickIds": {
+    "gclid": "test-gclid-123",
+    "msclkid": "test-msclkid-456",
+    "fbclid": "test-fbclid-789"
+  },
+  "attribution": {
+    "firstTouch": {
+      "source": "google",
+      "medium": "cpc",
+      "campaign": "emergency-plumber-perth",
+      "url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth",
+      "timestamp": "2026-05-20T01:10:00.000Z"
+    },
+    "lastTouch": {
+      "source": "google",
+      "medium": "cpc",
+      "campaign": "emergency-plumber-perth",
+      "url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_content=call-ad&gclid=test-gclid-123",
+      "timestamp": "2026-05-20T01:18:00.000Z"
+    }
+  },
+  "consent": {
+    "status": "granted",
+    "source": "landing_page_form",
+    "basis": "enquiry_follow_up",
+    "text": "Customer submitted the form requesting a return call."
+  },
+  "sourceContext": {
+    "captureMethod": "hidden_fields",
+    "formProvider": "Webflow",
+    "site": "perthplumbing.example"
+  },
+  "leadQuality": {
+    "score": 88,
+    "notes": "Strong Freshsales lead: same-day urgency, phone supplied, service supplied, campaign source present, consent captured."
+  }
+}
