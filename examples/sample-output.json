@@ -1,0 +1,620 @@
+{
+  "kit": "adpages-freshsales-lead-attribution-kit",
+  "version": "0.1.0",
+  "platform": "freshsales",
+  "manualUseOnly": true,
+  "disclaimer": "Local preview only. This kit does not call Freshsales, create leads, or write CRM data.",
+  "client": "Perth Plumbing Co",
+  "formName": "Emergency Plumbing Freshsales Form",
+  "leadTitle": "Emergency plumber enquiry - Subiaco",
+  "targetPlan": {
+    "owner": "Intake team",
+    "lifecycleStage": "New lead",
+    "assignmentRule": "Manual review before automation",
+    "pipelineName": "Local Service Leads",
+    "dealStage": "Qualification",
+    "salesAccountName": "Example Household"
+  },
+  "mappedFields": [
+    {
+      "sourceKey": "first_name",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "First Name",
+      "plannedFreshsalesKey": "native_first_name",
+      "type": "identity",
+      "value": "Sam",
+      "required": false,
+      "purpose": "Populate the native lead first-name field when available."
+    },
+    {
+      "sourceKey": "last_name",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Last Name",
+      "plannedFreshsalesKey": "native_last_name",
+      "type": "identity",
+      "value": "Example",
+      "required": true,
+      "purpose": "Satisfy Freshsales lead identity requirements."
+    },
+    {
+      "sourceKey": "company_name",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Company",
+      "plannedFreshsalesKey": "native_company_name",
+      "type": "identity",
+      "value": "Example Household",
+      "required": true,
+      "purpose": "Satisfy Freshsales company context for household or business enquiries."
+    },
+    {
+      "sourceKey": "phone",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Mobile Number",
+      "plannedFreshsalesKey": "native_mobile_number",
+      "type": "identity",
+      "value": "+61 400 000 123",
+      "required": true,
+      "purpose": "Enable prompt sales follow-up."
+    },
+    {
+      "sourceKey": "email",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Email",
+      "plannedFreshsalesKey": "native_email",
+      "type": "identity",
+      "value": "sam@example.test",
+      "required": false,
+      "purpose": "Support non-phone follow-up."
+    },
+    {
+      "sourceKey": "lead_title",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Lead Title",
+      "plannedFreshsalesKey": "manual_lead_title",
+      "type": "review",
+      "value": "Emergency plumber enquiry - Subiaco",
+      "required": true,
+      "purpose": "Keep a readable intake title for sales review."
+    },
+    {
+      "sourceKey": "lead_owner",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Lead Owner",
+      "plannedFreshsalesKey": "manual_lead_owner",
+      "type": "review",
+      "value": "Intake team",
+      "required": false,
+      "purpose": "Record the intended owner before enabling assignment rules."
+    },
+    {
+      "sourceKey": "lifecycle_stage",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "Lifecycle Stage",
+      "plannedFreshsalesKey": "manual_lifecycle_stage",
+      "type": "review",
+      "value": "New lead",
+      "required": false,
+      "purpose": "Record the intended lifecycle stage without automating it."
+    },
+    {
+      "sourceKey": "contact_name",
+      "targetObject": "contact",
+      "freshsalesResource": "Contacts",
+      "freshsalesFieldLabel": "Contact Name",
+      "plannedFreshsalesKey": "native_contact_name",
+      "type": "identity",
+      "value": "Sam Example",
+      "required": true,
+      "purpose": "Carry the customer name into contact review."
+    },
+    {
+      "sourceKey": "sales_account_name",
+      "targetObject": "sales_account",
+      "freshsalesResource": "Sales Accounts",
+      "freshsalesFieldLabel": "Name",
+      "plannedFreshsalesKey": "native_sales_account_name",
+      "type": "identity",
+      "value": "Example Household",
+      "required": false,
+      "purpose": "Attach a sales account label when the lead is converted."
+    },
+    {
+      "sourceKey": "deal_name",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "Deal Name",
+      "plannedFreshsalesKey": "native_deal_name",
+      "type": "qualification",
+      "value": "Emergency plumber enquiry - Subiaco",
+      "required": true,
+      "purpose": "Prepare a readable deal name if the lead is converted."
+    },
+    {
+      "sourceKey": "deal_stage",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "Stage",
+      "plannedFreshsalesKey": "native_deal_stage",
+      "type": "qualification",
+      "value": "Qualification",
+      "required": false,
+      "purpose": "Record the intended first deal stage for review."
+    },
+    {
+      "sourceKey": "estimated_value",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "Amount",
+      "plannedFreshsalesKey": "native_deal_amount",
+      "type": "qualification",
+      "value": "650",
+      "required": false,
+      "purpose": "Provide an early value estimate for reporting."
+    },
+    {
+      "sourceKey": "service_requested",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Service Requested",
+      "plannedFreshsalesKey": "manual_service_requested",
+      "type": "qualification",
+      "value": "Blocked drain",
+      "required": true,
+      "purpose": "Show the service intent on the lead."
+    },
+    {
+      "sourceKey": "service_area",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Service Area",
+      "plannedFreshsalesKey": "manual_service_area",
+      "type": "qualification",
+      "value": "Subiaco WA",
+      "required": true,
+      "purpose": "Confirm whether the lead is in the served area."
+    },
+    {
+      "sourceKey": "urgency",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Urgency",
+      "plannedFreshsalesKey": "manual_urgency",
+      "type": "qualification",
+      "value": "same_day",
+      "required": false,
+      "purpose": "Guide response speed and assignment."
+    },
+    {
+      "sourceKey": "form_message",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Form Message",
+      "plannedFreshsalesKey": "manual_form_message",
+      "type": "qualification",
+      "value": "Toilet is backing up and we need help today.",
+      "required": false,
+      "purpose": "Preserve the customer's original request for human review."
+    },
+    {
+      "sourceKey": "utm_source",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages UTM Source",
+      "plannedFreshsalesKey": "manual_utm_source",
+      "type": "attribution",
+      "value": "google",
+      "required": true,
+      "purpose": "Identify the campaign source."
+    },
+    {
+      "sourceKey": "utm_medium",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages UTM Medium",
+      "plannedFreshsalesKey": "manual_utm_medium",
+      "type": "attribution",
+      "value": "cpc",
+      "required": true,
+      "purpose": "Identify the channel medium."
+    },
+    {
+      "sourceKey": "utm_campaign",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages UTM Campaign",
+      "plannedFreshsalesKey": "manual_utm_campaign",
+      "type": "attribution",
+      "value": "emergency-plumber-perth",
+      "required": false,
+      "purpose": "Attribute the lead to the campaign."
+    },
+    {
+      "sourceKey": "utm_term",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages UTM Term",
+      "plannedFreshsalesKey": "manual_utm_term",
+      "type": "attribution",
+      "value": "blocked drain",
+      "required": false,
+      "purpose": "Carry keyword or audience intent."
+    },
+    {
+      "sourceKey": "utm_content",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages UTM Content",
+      "plannedFreshsalesKey": "manual_utm_content",
+      "type": "attribution",
+      "value": "call-ad",
+      "required": false,
+      "purpose": "Differentiate creative or call-to-action variants."
+    },
+    {
+      "sourceKey": "landing_page_url",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Landing Page URL",
+      "plannedFreshsalesKey": "manual_landing_page_url",
+      "type": "attribution",
+      "value": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123&msclkid=test-msclkid-456&fbclid=test-fbclid-789",
+      "required": true,
+      "purpose": "Show the source landing page that produced the lead."
+    },
+    {
+      "sourceKey": "referrer_url",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Referrer URL",
+      "plannedFreshsalesKey": "manual_referrer_url",
+      "type": "attribution",
+      "value": "https://www.google.com/",
+      "required": false,
+      "purpose": "Preserve the previous page where available."
+    },
+    {
+      "sourceKey": "gclid",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Google Click ID",
+      "plannedFreshsalesKey": "manual_gclid",
+      "type": "attribution",
+      "value": "test-gclid-123",
+      "required": false,
+      "purpose": "Carry Google Ads click identifiers for manual reconciliation."
+    },
+    {
+      "sourceKey": "msclkid",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Microsoft Click ID",
+      "plannedFreshsalesKey": "manual_msclkid",
+      "type": "attribution",
+      "value": "test-msclkid-456",
+      "required": false,
+      "purpose": "Carry Microsoft Ads click identifiers for manual reconciliation."
+    },
+    {
+      "sourceKey": "fbclid",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Facebook Click ID",
+      "plannedFreshsalesKey": "manual_fbclid",
+      "type": "attribution",
+      "value": "test-fbclid-789",
+      "required": false,
+      "purpose": "Carry Meta click identifiers for manual reconciliation."
+    },
+    {
+      "sourceKey": "first_touch_summary",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages First Touch",
+      "plannedFreshsalesKey": "manual_first_touch_summary",
+      "type": "attribution",
+      "value": "google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z",
+      "required": false,
+      "purpose": "Show the earliest known campaign touch."
+    },
+    {
+      "sourceKey": "first_touch_url",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages First Touch URL",
+      "plannedFreshsalesKey": "manual_first_touch_url",
+      "type": "attribution",
+      "value": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth",
+      "required": false,
+      "purpose": "Preserve the earliest known landing page."
+    },
+    {
+      "sourceKey": "last_touch_summary",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Last Touch",
+      "plannedFreshsalesKey": "manual_last_touch_summary",
+      "type": "attribution",
+      "value": "google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z",
+      "required": false,
+      "purpose": "Show the most recent known campaign touch before submission."
+    },
+    {
+      "sourceKey": "last_touch_url",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Last Touch URL",
+      "plannedFreshsalesKey": "manual_last_touch_url",
+      "type": "attribution",
+      "value": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_content=call-ad&gclid=test-gclid-123",
+      "required": false,
+      "purpose": "Preserve the most recent known landing page before submission."
+    },
+    {
+      "sourceKey": "consent_status",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Consent Status",
+      "plannedFreshsalesKey": "manual_consent_status",
+      "type": "consent",
+      "value": "granted",
+      "required": true,
+      "purpose": "Record whether follow-up consent was captured."
+    },
+    {
+      "sourceKey": "consent_source",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Consent Source",
+      "plannedFreshsalesKey": "manual_consent_source",
+      "type": "consent",
+      "value": "landing_page_form",
+      "required": false,
+      "purpose": "Record where consent context came from."
+    },
+    {
+      "sourceKey": "source_context",
+      "targetObject": "lead",
+      "freshsalesResource": "Leads",
+      "freshsalesFieldLabel": "AdPages Source Context",
+      "plannedFreshsalesKey": "manual_source_context",
+      "type": "consent",
+      "value": "capture hidden_fields; form Webflow; site perthplumbing.example; owner Intake team",
+      "required": false,
+      "purpose": "Summarize the capture method, form provider, site, and owner context."
+    },
+    {
+      "sourceKey": "source_summary",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "AdPages Source Summary",
+      "plannedFreshsalesKey": "manual_source_summary",
+      "type": "review",
+      "value": "google / cpc / emergency-plumber-perth",
+      "required": false,
+      "purpose": "Give sales a compact campaign summary."
+    },
+    {
+      "sourceKey": "attribution_note",
+      "targetObject": "contact",
+      "freshsalesResource": "Contacts",
+      "freshsalesFieldLabel": "AdPages Attribution Note",
+      "plannedFreshsalesKey": "manual_attribution_note",
+      "type": "review",
+      "value": "Freshsales attribution preview: google / cpc / emergency-plumber-perth. First touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z. Last touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z. Consent: granted via landing_page_form.",
+      "required": false,
+      "purpose": "Give sales a human-readable attribution note."
+    },
+    {
+      "sourceKey": "lead_quality_score",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "AdPages Lead Quality Score",
+      "plannedFreshsalesKey": "manual_lead_quality_score",
+      "type": "review",
+      "value": "88",
+      "required": false,
+      "purpose": "Provide a planning score for human review."
+    },
+    {
+      "sourceKey": "lead_quality_notes",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "AdPages Lead Quality Notes",
+      "plannedFreshsalesKey": "manual_lead_quality_notes",
+      "type": "review",
+      "value": "Strong Freshsales lead: same-day urgency, phone supplied, service supplied, campaign source present, consent captured.",
+      "required": false,
+      "purpose": "Explain why the lead should be followed up or reviewed."
+    },
+    {
+      "sourceKey": "next_review_action",
+      "targetObject": "deal",
+      "freshsalesResource": "Deals",
+      "freshsalesFieldLabel": "AdPages Next Review Action",
+      "plannedFreshsalesKey": "manual_next_review_action",
+      "type": "review",
+      "value": "Call within 5 minutes, confirm service area, verify consent context, and mark campaign values reviewed.",
+      "required": false,
+      "purpose": "Give the reviewer a suggested next action without automating assignment."
+    }
+  ],
+  "fieldValues": {
+    "native_first_name": "Sam",
+    "native_last_name": "Example",
+    "native_company_name": "Example Household",
+    "native_mobile_number": "+61 400 000 123",
+    "native_email": "sam@example.test",
+    "manual_lead_title": "Emergency plumber enquiry - Subiaco",
+    "manual_lead_owner": "Intake team",
+    "manual_lifecycle_stage": "New lead",
+    "native_contact_name": "Sam Example",
+    "native_sales_account_name": "Example Household",
+    "native_deal_name": "Emergency plumber enquiry - Subiaco",
+    "native_deal_stage": "Qualification",
+    "native_deal_amount": "650",
+    "manual_service_requested": "Blocked drain",
+    "manual_service_area": "Subiaco WA",
+    "manual_urgency": "same_day",
+    "manual_form_message": "Toilet is backing up and we need help today.",
+    "manual_utm_source": "google",
+    "manual_utm_medium": "cpc",
+    "manual_utm_campaign": "emergency-plumber-perth",
+    "manual_utm_term": "blocked drain",
+    "manual_utm_content": "call-ad",
+    "manual_landing_page_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123&msclkid=test-msclkid-456&fbclid=test-fbclid-789",
+    "manual_referrer_url": "https://www.google.com/",
+    "manual_gclid": "test-gclid-123",
+    "manual_msclkid": "test-msclkid-456",
+    "manual_fbclid": "test-fbclid-789",
+    "manual_first_touch_summary": "google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z",
+    "manual_first_touch_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth",
+    "manual_last_touch_summary": "google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z",
+    "manual_last_touch_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_content=call-ad&gclid=test-gclid-123",
+    "manual_consent_status": "granted",
+    "manual_consent_source": "landing_page_form",
+    "manual_source_context": "capture hidden_fields; form Webflow; site perthplumbing.example; owner Intake team",
+    "manual_source_summary": "google / cpc / emergency-plumber-perth",
+    "manual_attribution_note": "Freshsales attribution preview: google / cpc / emergency-plumber-perth. First touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z. Last touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z. Consent: granted via landing_page_form.",
+    "manual_lead_quality_score": "88",
+    "manual_lead_quality_notes": "Strong Freshsales lead: same-day urgency, phone supplied, service supplied, campaign source present, consent captured.",
+    "manual_next_review_action": "Call within 5 minutes, confirm service area, verify consent context, and mark campaign values reviewed."
+  },
+  "freshsalesPayloadPreview": {
+    "leadCreateOrReview": {
+      "first_name": "Sam",
+      "last_name": "Example",
+      "mobile_number": "+61 400 000 123",
+      "email": "sam@example.test",
+      "company": {
+        "name": "Example Household"
+      },
+      "custom_field": {
+        "manual_lead_title": "Emergency plumber enquiry - Subiaco",
+        "manual_lead_owner": "Intake team",
+        "manual_lifecycle_stage": "New lead",
+        "manual_service_requested": "Blocked drain",
+        "manual_service_area": "Subiaco WA",
+        "manual_urgency": "same_day",
+        "manual_form_message": "Toilet is backing up and we need help today.",
+        "manual_utm_source": "google",
+        "manual_utm_medium": "cpc",
+        "manual_utm_campaign": "emergency-plumber-perth",
+        "manual_utm_term": "blocked drain",
+        "manual_utm_content": "call-ad",
+        "manual_landing_page_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123&msclkid=test-msclkid-456&fbclid=test-fbclid-789",
+        "manual_referrer_url": "https://www.google.com/",
+        "manual_gclid": "test-gclid-123",
+        "manual_msclkid": "test-msclkid-456",
+        "manual_fbclid": "test-fbclid-789",
+        "manual_first_touch_summary": "google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z",
+        "manual_first_touch_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth",
+        "manual_last_touch_summary": "google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z",
+        "manual_last_touch_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_content=call-ad&gclid=test-gclid-123",
+        "manual_consent_status": "granted",
+        "manual_consent_source": "landing_page_form",
+        "manual_source_context": "capture hidden_fields; form Webflow; site perthplumbing.example; owner Intake team"
+      }
+    },
+    "contactReview": {
+      "display_name": "Sam Example",
+      "email": "sam@example.test",
+      "mobile_number": "+61 400 000 123",
+      "sales_account": {
+        "name": "Example Household"
+      },
+      "custom_field": {
+        "manual_attribution_note": "Freshsales attribution preview: google / cpc / emergency-plumber-perth. First touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z. Last touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z. Consent: granted via landing_page_form."
+      }
+    },
+    "salesAccountReview": {
+      "name": "Example Household"
+    },
+    "dealCreateOnConversion": {
+      "name": "Emergency plumber enquiry - Subiaco",
+      "amount": "650",
+      "stage": "Qualification",
+      "sales_account": {
+        "name": "Example Household"
+      },
+      "custom_field": {
+        "manual_source_summary": "google / cpc / emergency-plumber-perth",
+        "manual_lead_quality_score": "88",
+        "manual_lead_quality_notes": "Strong Freshsales lead: same-day urgency, phone supplied, service supplied, campaign source present, consent captured.",
+        "manual_next_review_action": "Call within 5 minutes, confirm service area, verify consent context, and mark campaign values reviewed."
+      }
+    }
+  },
+  "summaryNote": "Freshsales attribution preview: google / cpc / emergency-plumber-perth. First touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:10:00.000Z. Last touch: google / cpc / emergency-plumber-perth at 2026-05-20T01:18:00.000Z. Consent: granted via landing_page_form.",
+  "leadQuality": {
+    "score": "88",
+    "rating": "strong",
+    "notes": "Strong Freshsales lead: same-day urgency, phone supplied, service supplied, campaign source present, consent captured.",
+    "requiresHumanReview": true
+  },
+  "qualityChecklist": [
+    {
+      "check": "Freshsales lead identity",
+      "status": "pass",
+      "note": "Last name and company context are present."
+    },
+    {
+      "check": "Contact path",
+      "status": "pass",
+      "note": "Phone or email supplied."
+    },
+    {
+      "check": "Campaign attribution",
+      "status": "pass",
+      "note": "UTM source, medium, and campaign are present."
+    },
+    {
+      "check": "Click identifiers",
+      "status": "pass",
+      "note": "At least one click identifier is present."
+    },
+    {
+      "check": "First and last touch",
+      "status": "pass",
+      "note": "First-touch and last-touch context are present."
+    },
+    {
+      "check": "Consent context",
+      "status": "pass",
+      "note": "Consent status is recorded."
+    },
+    {
+      "check": "Landing page context",
+      "status": "pass",
+      "note": "Landing-page URL is present and uses HTTPS."
+    },
+    {
+      "check": "Service fit",
+      "status": "pass",
+      "note": "Service and location are present."
+    },
+    {
+      "check": "Urgency and value",
+      "status": "review",
+      "note": "Urgency and estimated value are supplied; confirm before deal reporting."
+    },
+    {
+      "check": "Human QA",
+      "status": "review",
+      "note": "Review mapped fields inside Freshsales before using assignment rules, workflows, Freddy scoring, or reporting."
+    }
+  ],
+  "missingRequired": [],
+  "reviewSteps": [
+    "Create or update Freshsales custom fields manually using docs/setup-checklist.md.",
+    "Create a test lead from the source form and compare each mapped value against this preview.",
+    "Review lead-quality checklist before enabling assignment rules, workflows, Freddy scoring, or reporting."
+  ]
+}

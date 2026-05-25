@@ -1,0 +1,33 @@
+{
+  "name": "@adpages/freshsales-lead-attribution-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Local-only Freshsales lead attribution mapping and lead-quality checklist resource kit.",
+  "keywords": [
+    "freshsales",
+    "freshworks",
+    "crm",
+    "lead-attribution",
+    "utm",
+    "adpages"
+  ],
+  "files": [
+    "README.md",
+    "PRIVACY.md",
+    "PUBLISH_BLOCKERS.md",
+    "config/*.json",
+    "docs/*.md",
+    "examples/*.json",
+    "scripts/*.mjs",
+    "src/*.mjs"
+  ],
+  "scripts": {
+    "check": "node --check src/lead-attribution.mjs && node --check scripts/check.mjs && node --check scripts/smoke.mjs && node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
